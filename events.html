@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events Demo</title>        
+    </head>
+    <body onload="myFunction()">
+        <!-- The event occurs when the user clicks on an element -->
+        <p> 1. onclick demo </p>
+        <p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+        <button onclick="myFunction()">Click me</button>
+        <p id="demo"></p>
+        
+        <!--The event occurs when an element loses focus -->
+        <p>2. onblur demo </p>
+        Enter your name: <input type="text" id="fname" onblur="myFunction()">
+        <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+        
+        <!-- The event occurs when an error occurs with the event source -->
+        <!-- An error usually occurs when a connection is disrupted. If this happens, the EventSource object will automatically attempt to reconnect to the server. -->
+        <p>3. onerror demo </p>
+        <img src="image.gif" onerror="myFunction()">
+        <p>A function is triggered if an error occurs when loading the image. The function shows an alert box with a text.
+        In this example we refer to an image that does not exist, therefore the onerror event occurs.</p>
+        
+        <!-- The event occurs when an object has loaded -->
+        <!-- onload is most often used within the <body> element to execute a script once a web page has completely loaded all content (including images, script files, CSS files, etc.). -->
+        <!-- The onload event can be used to check the visitor's browser type and browser version, and load the proper version of the web page based on the information. -->
+        <p>4. onload demo</p>
+        <h5>Page is loaded</h5>
+        
+        <!-- The event occurs when a form is submitted -->
+        <p>5. onsubmit </p>
+        <p>When you submit the form, a function is triggered which alerts some text.</p>
+        <form action="Resume.html" onsubmit="myFunction()">
+            Enter name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- script starts -->
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "Hello World";
+                var x = document.getElementById("fname");
+                x.value = x.value.toUpperCase();
+                alert('The image could not be loaded.');
+                alert("Page is loaded");
+                alert("The form was submitted");
+            }
+        </script>
+    </body>
+</html>
